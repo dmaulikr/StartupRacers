@@ -26,5 +26,15 @@ namespace StartupRacers
         {
             this.InitializeComponent();
         }
+
+        private void AddPlayer_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void NextAction_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

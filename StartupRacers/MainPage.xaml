@@ -6,8 +6,44 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
+    <Page.Resources>
+        <ControlTemplate x:Key="StartupAvatar" TargetType="ContentControl">
+            <Image Source="/Assets/programmer.png"/>
+        </ControlTemplate>
+    </Page.Resources>
+
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="300"/>
+                <ColumnDefinition Width="500*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="500*"/>
+            </Grid.RowDefinitions>
+            <Grid x:Name="childGrid" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" Width="1610" Height="970" Margin="10,0,0,10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="42*"/>
+                    <RowDefinition Height="55*"/>
+                </Grid.RowDefinitions>
+                <Canvas x:Name="RacingArena" HorizontalAlignment="Left" Height="410" Margin="10,10,0,0" VerticalAlignment="Top" Width="1590" Background="#FF458D4F"/>
+                <TextBlock x:Name="ScoreHeading" HorizontalAlignment="Left" Margin="94,74,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Current Score: " VerticalAlignment="Top" Height="38" Width="170" FontSize="24"/>
+                <TextBlock x:Name="CurrentScore" HorizontalAlignment="Left" Margin="264,84,0,0" Grid.Row="1" TextWrapping="Wrap" Text="0.00" VerticalAlignment="Top" Height="28" Width="88"/>
+                <TextBlock x:Name="StartUpListHeading" HorizontalAlignment="Left" Margin="94,117,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Select a Startup:" VerticalAlignment="Top" Height="55" Width="170" FontSize="24"/>
+                <StackPanel x:Name="StartupList" HorizontalAlignment="Left" Height="266" Margin="94,177,0,0" Grid.Row="1" VerticalAlignment="Top" Width="400"/>
+                <TextBlock x:Name="BidHeading" HorizontalAlignment="Left" Margin="678,222,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Amount To Bid: $" VerticalAlignment="Top" Height="70" Width="374" FontSize="48"/>
+                <TextBox x:Name="BidAmount" HorizontalAlignment="Left" Margin="1057,222,0,0" Grid.Row="1" TextWrapping="Wrap" Text="0.00" VerticalAlignment="Top" Height="70" Width="363" FontSize="48"/>
+                <Button x:Name="NextAction" Content="Next Player" HorizontalAlignment="Left" Margin="1292,393,0,0" Grid.Row="1" VerticalAlignment="Top" Height="128" Width="287" FontSize="48" Click="NextAction_Click"/>
+            </Grid>
+            <ListView x:Name="listView" HorizontalAlignment="Left" Height="757" Margin="10,109,0,0" Grid.Row="1" VerticalAlignment="Top" Width="280"/>
+            <Button x:Name="AddPlayer" Content="+ Add A Player" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="1" VerticalAlignment="Top" Height="94" Width="280" FontSize="24" Click="AddPlayer_Click"/>
+            <TextBlock x:Name="Title" Grid.Column="1" HorizontalAlignment="Center" Margin="10,10,0,0" TextWrapping="Wrap" Text="Startup Racers!" VerticalAlignment="Center" Height="90" Width="1600" FontSize="48" TextAlignment="Center"/>
+        </Grid>
 
     </Grid>
 </Page>
